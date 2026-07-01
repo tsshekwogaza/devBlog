@@ -1,0 +1,104 @@
+.Container {
+  width: 90%;
+  margin: 70px;
+  display: grid;
+  grid-template-areas: "daniel daniel daniel daniel jonathan jonathan kira kira" "jeanette jeanette patrick patrick patrick patrick kira kira";
+  gap: 20px;
+}
+.Container > div {
+  border-radius: 10px;
+  padding: 20px 25px;
+}
+.Container > div .label {
+  display: flex;
+  align-items: center;
+}
+.Container > div .label img {
+  width: 35px;
+  border-radius: 50%;
+  border: 1px solid hsl(0, 0%, 81%);
+}
+.Container > div .label .name {
+  margin-left: 18px;
+}
+.Container > div .label .name h1 {
+  font-size: 16px;
+  color: hsl(210, 46%, 95%);
+  font-weight: 500;
+}
+.Container > div .label .name .status {
+  color: hsla(210, 46%, 95%, 0.5);
+}
+.Container > div .info h3 {
+  font-size: 20px;
+  color: hsl(0, 0%, 100%);
+  font-weight: 500;
+  margin: 20px 0;
+}
+.Container > div .info p {
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.2;
+}
+.Container .daniel {
+  grid-area: daniel;
+  background-color: hsl(182, 65%, 44%);
+}
+.Container .jonathan {
+  grid-area: jonathan;
+  background-color: hsl(217, 19%, 35%);
+}
+.Container .jeanette {
+  grid-area: jeanette;
+  background-color: hsl(0, 0%, 100%);
+}
+.Container .jeanette .label .name h1 {
+  color: hsl(219, 29%, 14%);
+}
+.Container .jeanette .label .name .status {
+  color: hsla(219, 29%, 14%, 0.7);
+}
+.Container .jeanette .info h3 {
+  color: hsl(219, 29%, 14%);
+}
+.Container .jeanette .info p {
+  color: hsla(219, 29%, 14%, 0.7);
+}
+.Container .patrick {
+  grid-area: patrick;
+  background-color: hsl(219, 29%, 14%);
+}
+.Container .kira {
+  grid-area: kira;
+  background-color: hsl(0, 0%, 100%);
+}
+.Container .kira .label .name h1 {
+  color: hsl(219, 29%, 14%);
+}
+.Container .kira .label .name .status {
+  color: hsla(219, 29%, 14%, 0.7);
+}
+.Container .kira .info h3 {
+  color: hsl(219, 29%, 14%);
+}
+.Container .kira .info p {
+  color: hsla(219, 29%, 14%, 0.7);
+}
+
+@media (max-width: 700px) {
+  .Container {
+    width: 95%;
+    margin: 50px 0 50px 0;
+    grid-template-areas: "daniel daniel daniel daniel daniel daniel daniel daniel" "jonathan jonathan jonathan jonathan jonathan jonathan jonathan jonathan" "jeanette jeanette jeanette jeanette jeanette jeanette jeanette jeanette" "patrick patrick patrick patrick patrick patrick patrick patrick" "kira kira kira kira kira kira kira kira";
+  }
+  .Container > div {
+    padding: 25px;
+  }
+  .Container > div .info h3 {
+    font-size: 18px;
+  }
+  .Container > div .info p {
+    font-size: 15px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

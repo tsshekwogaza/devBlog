@@ -1,0 +1,150 @@
+// Colors
+$Moderateviolet: hsl(263, 55%, 52%);
+$Verydarkgrayishblue: hsl(217, 19%, 35%);
+$Verydarkblackishblue: hsl(219, 29%, 14%);
+$White: hsl(0, 0%, 100%);
+$Lightgray: hsl(0, 0%, 81%);
+$Lightgrayishblue: hsl(210, 46%, 95%);
+$size: 13px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    background-color: $Lightgrayishblue;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .container {
+        width: 90%;
+        margin: 120px;
+        display: grid;
+        grid-template-areas: 
+                        'daniel daniel daniel daniel jonathan jonathan kira kira'
+                        'jeanette jeanette patrick patrick patrick patrick kira kira';
+        gap: 20px;
+        > div {
+            border-radius: 10px;
+            padding: 25px 30px;
+            .label {
+                display: flex;
+                align-items: center;
+                img {
+                    width: 35px;
+                    border-radius: 50%;
+                    border: 1px solid $Lightgray;
+                }
+                .name {
+                    margin-left: 18px;
+                    h1 {
+                        font-size: 16px;
+                        color: $Lightgrayishblue;
+                        font-weight: 500;
+                    }
+                    .status {
+                        color: hsl(210, 46%, 95%, 50%);
+                    }
+                }
+            }
+            .info {
+                h3 {
+                    font-size: 20px;
+                    color: $White;
+                    font-weight: 500;
+                    margin: 20px 0;
+                }
+                p {
+                    color: rgb(255, 255, 255, 0.5);
+                    line-height: 1.2;
+                }
+            }
+        }
+        .daniel {
+            grid-area: daniel;
+            background-color: $Moderateviolet;
+        }
+        .jonathan {
+            grid-area: jonathan;
+            background-color: $Verydarkgrayishblue;
+        }
+        .jeanette {
+            grid-area: jeanette;
+            background-color: $White;
+            .label {
+                .name {
+                    h1 {
+                        color: $Verydarkblackishblue;
+                    }
+                    .status {
+                        color: hsl(219, 29%, 14%, 70%);
+                    }
+                }
+            }
+            .info {
+                h3 {
+                    color: $Verydarkblackishblue;
+                }
+                p {
+                    color: hsl(219, 29%, 14%, 70%);
+                }
+            }
+        }
+        .patrick {
+            grid-area: patrick;
+            background-color: $Verydarkblackishblue;
+        }
+        .kira {
+            grid-area: kira;
+            background-color: $White;
+            .label {
+                .name {
+                    h1 {
+                        color: $Verydarkblackishblue;
+                    }
+                    .status {
+                        color: hsl(219, 29%, 14%, 70%);
+                    }
+                }
+            }
+            .info {
+                h3 {
+                    color: $Verydarkblackishblue;
+                }
+                p {
+                    color: hsl(219, 29%, 14%, 70%);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    body {
+        .container {
+            width: 95%;
+            margin: 50px 0 50px 0;
+            grid-template-areas: 
+                                'daniel daniel daniel daniel daniel daniel daniel daniel'
+                                'jonathan jonathan jonathan jonathan jonathan jonathan jonathan jonathan'
+                                'jeanette jeanette jeanette jeanette jeanette jeanette jeanette jeanette'
+                                'patrick patrick patrick patrick patrick patrick patrick patrick'
+                                'kira kira kira kira kira kira kira kira'
+                                ;
+            > div {
+                padding: 25px;
+                .info {
+                    h3 {
+                        font-size: 18px;
+                    }
+                    p {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
