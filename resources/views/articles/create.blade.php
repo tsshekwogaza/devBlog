@@ -17,32 +17,10 @@
                     </svg>
                     <p class="text-sm font-medium text-slate-700">Click to upload or drag and drop</p>
                     <input type="file" name="image" required class="w-full rounded-lg border border-gray-300 p-3">
-                    <p class="text-xs text-slate-400 mt-1">PNG, JPG, or WEBP up to 5MB</p>
+                    <p class="text-xs text-slate-400 mt-1">PNG, JPG, or WEBP up to 2MB</p>
                 </div>
 
                 <x-forms.error name="image" />
-            </div>
-
-            <!-- Author Information -->
-            <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs space-y-5">
-                <div>
-                    <label for="authors_image" class="block text-sm font-medium text-slate-700 mb-1.5">Author image</label>
-                    <input type="file" name="authors_image" required class="w-full px-3.5 py-2 text-base bg-white border border-slate-300 rounded-lg shadow-2xs placeholder-slate-400 focus:outline-hidden focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition">
-                
-                    <x-forms.error name="authors_image" />
-                </div>
-                <div>
-                    <label for="authors_name" class="block text-sm font-medium text-slate-700 mb-1.5">Author name</label>
-                    <input type="text" name="authors_name" placeholder="e.g., John Doe" required class="w-full px-3.5 py-2 text-base bg-white border border-slate-300 rounded-lg shadow-2xs placeholder-slate-400 focus:outline-hidden focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition">
-                
-                    <x-forms.error name="authors_name" />
-                </div>
-                <div>
-                    <label for="authors_profession" class="block text-sm font-medium text-slate-700 mb-1.5">Author profession</label>
-                    <input type="text" name="authors_profession" placeholder="e.g., Software Engineer" required class="w-full px-3.5 py-2 text-base bg-white border border-slate-300 rounded-lg shadow-2xs placeholder-slate-400 focus:outline-hidden focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 transition">
-                    
-                    <x-forms.error name="authors_profession" />
-                </div>
             </div>
 
             <!-- Title & Category Inputs -->
@@ -72,15 +50,37 @@
             <!-- Content Editor Panel -->
             <div class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
                 <div class="bg-slate-50 border-b border-slate-200 px-4 py-2.5 flex flex-wrap items-center gap-1.5">
+                    <button type="button" class="p-1.5 text-slate-600 rounded-md hover:bg-slate-200/70 hover:text-slate-900 transition">
+                        <span class="font-bold text-sm block min-w-5">B</span>
+                    </button>
+                    <button type="button" class="p-1.5 text-slate-600 rounded-md hover:bg-slate-200/70 hover:text-slate-900 transition">
+                        <span class="italic text-sm block min-w-5">I</span>
+                    </button>
+                    <div class="w-px h-5 bg-slate-300 mx-1"></div>
+                    <button type="button" class="p-1.5 text-slate-600 rounded-md hover:bg-slate-200/70 hover:text-slate-900 transition">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" /></svg>
+                    </button>
+                    <button type="button" class="p-1.5 text-slate-600 rounded-md hover:bg-slate-200/70 hover:text-slate-900 transition">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" /></svg>
+                    </button>
+                </div>
+                <div>
+                    <textarea type="text" id="text" name="text" rows="12" required class="w-full px-4 py-4 text-base bg-white border-0 placeholder-slate-400 focus:outline-hidden focus:ring-0 resize-y min-h-62.5 font-sans leading-relaxed"></textarea>
+                </div>
+            </div>
+
+            <x-forms.error name="text" />
+
+            {{-- <div class="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+                <div class="bg-slate-50 border-b border-slate-200 px-4 py-2.5 flex flex-wrap items-center gap-1.5">
                     <button type="button" class="p-1.5 text-slate-600 rounded-md transition">Write your content here... Support's Markdown formatting.
                     </button>
                 </div>
                 <div>
                     <textarea type="text" id="text" name="text" rows="12" required class="w-full px-4 py-4 text-base bg-white border-0 placeholder-slate-400 focus:outline-hidden focus:ring-0 resize-y min-h-62.5 font-sans leading-relaxed tinymce"></textarea>
-                </div>
+                </div>              
             </div>
-            
-            <x-forms.error name="text" />
+            <x-forms.error name="text" /> --}}
 
             <div class="flex items-center justify-end gap-3 pt-2">
                 <button type="button" class="px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg shadow-2xs hover:bg-slate-50 active:bg-slate-100 transition cursor-pointer">
@@ -93,7 +93,7 @@
         </form>
     </main>
 
-    <script src="/tinymce/tinymce.min.js"></script>
-    <script src="/tinymce/init-tinymce.min.js"></script>
+    {{-- <script src="/tinymce/tinymce.min.js"></script> --}}
+    {{-- <script src="/tinymce/init-tinymce.min.js"></script> --}}
 
 </x-layout>

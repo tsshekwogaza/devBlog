@@ -45,10 +45,12 @@
                                     <span>Create</span>
                                 </a>
 
-                                <div class="flex items-center gap-2 rounded-lg border border-neutral-200 bg-neutral-50/50 px-3 py-1.5 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-50">
-                                    <img src="/images/image-daniel.jpg" alt="User Avatar" class="h-8 w-8 shrink-0 rounded-full object-cover bg-neutral-100">
-                                    <span class="max-w-2500 truncate">{{ Auth::user()->name }}</span>
-                                </div>
+                                <a href="{{ url('/users'.'/'.Auth::user()->id.'/profile') }}">
+                                    <div class="flex items-center gap-2 rounded-lg border border-neutral-200 bg-neutral-50/50 px-3 py-1.5 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-50">
+                                        <img src="/storage/{{ Auth::user()->avatar }}" alt="Avatar" class="h-8 w-8 shrink-0 rounded-full object-cover bg-neutral-100">
+                                        {{-- <span class="max-w-2500 truncate">{{ Auth::user()->name }}</span> --}}
+                                    </div>
+                                </a>
 
                                 <form method="POST" action="/sessions">
                                     @csrf
@@ -76,7 +78,7 @@
         <footer class="flex flex-col mt-auto border-t border-neutral-200 bg-white py-8">
             <div class="flex items-center gap-7 mx-auto max-w-7xl px-4 text-center text-xs text-neutral-500 sm:px-6 lg:px-8">
                 <span class="font-bold">&copy; {{ date('Y') }}</span>
-                <span>Built with ❤ by a dev for devs</span>
+                <span>Built with ❤ by devs for devs</span>
             </div>
         </footer>
     </body>

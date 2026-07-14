@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Article;
@@ -21,7 +21,7 @@ class ArticleController extends Controller
         // ])
         ->when(request('category_id'), function($query) {
             $query->where('category_id', request('category_id'));
-        })->orderBy('title', 'asc')->paginate(3);
+        })->orderBy('id', 'desc')->paginate(6);
 
         $categories = Category::orderBy('name', 'asc')->get();
 
@@ -47,14 +47,10 @@ class ArticleController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
             'title' => 'required|string|min:10|max:255',
             'text' => 'required|min:100|string',
-            'authors_image' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
             'category_id' => 'required|exists:categories,id',
-            'authors_name' => 'required|string|max:255',
-            'authors_profession' => 'required|string|min:10|max:255'
         ]);
 
         $imagePath = $request->file('image')->store('images', 'public');
-        $authorImagePath = $request->file('authors_image')->store('images', 'public');
 
         Article::create([
             'user_id' => Auth::id(),
@@ -62,9 +58,6 @@ class ArticleController extends Controller
             'title' => $request->title,
             'text' => $request->text,
             'category_id' => $request->category_id,
-            'authors_image' => $authorImagePath,
-            'authors_name' => $request->authors_name,
-            'authors_profession' => $request->authors_profession
         ]);
 
         return redirect('articles');
@@ -77,6 +70,8 @@ class ArticleController extends Controller
     {
         $article = Article::findOrFail($id);
 
+        Gate::authorize('view', Article::class);
+
         return view('articles.show', compact('article'));
     }
 
@@ -88,6 +83,8 @@ class ArticleController extends Controller
         $article = Article::findOrFail($id);
 
         $categories = Category::all();
+
+        Gate::authorize('view-edit', $article);
 
         return view('articles.edit', compact('categories', 'article'));
     }
@@ -103,28 +100,20 @@ class ArticleController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
             'title' => 'required|string|min:10|max:255',
             'text' => 'required|min:20|string',
-            'authors_image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
             'category_id' => 'required|exists:categories,id',
-            'authors_name' => 'required|string|max:255',
-            'authors_profession' => 'required|string|max:255',
         ]);
+
+        Gate::authorize('update', $article);
 
         if ($request->hasFile('image')) {
             Storage::disk('public')->delete($article->image);
 
             $article->image = $request->file('image')->store('images', 'public');
         }
-        if ($request->hasFile('authors_image')) {
-            Storage::disk('public')->delete($article->authors_image);
-
-            $article->authors_image = $request->file('authors_image')->store('images', 'public');
-        }
 
         $article->title = $request->title;
         $article->text = $request->text;
         $article->category_id = $request->category_id;
-        $article->authors_name = $request->authors_name;
-        $article->authors_profession = $request->authors_profession;
 
         $article->save();
 
@@ -140,9 +129,6 @@ class ArticleController extends Controller
 
         if ($article->image && Storage::disk('public')->exists($article->image)) {
             Storage::disk('public')->delete($article->image);
-        }
-        if ($article->authors_image && Storage::disk('public')->exists($article->authors_image)) {
-            Storage::disk('public')->delete($article->authors_image);
         }
 
         $article->delete();

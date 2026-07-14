@@ -14,7 +14,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/articles', [ArticleController::class, 'store']);
     Route::get('/articles/{Article}', [ArticleController::class, 'show']);
     Route::get('/articles/{Article}/edit', [ArticleController::class, 'edit']);
-    Route::patch('/articles/{Article}', [ArticleController::class, 'update']);
+    Route::patch('/articles/{Article}', [ArticleController::class, 'update'])->can('update');
     Route::delete('/articles/{Article}', [ArticleController::class, 'destroy']);
 });
 
@@ -25,3 +25,6 @@ Route::middleware('guest')->group(function () {
 
 Route::post('/sessions', [SessionsController::class, 'store'])->middleware('guest');
 Route::delete('/sessions', [SessionsController::class, 'destroy'])->middleware('auth');
+
+Route::get('/users/{User}/profile', [RegisteredUserController::class, 'edit'])->middleware('auth');
+Route::patch('/users/{User}', [RegisteredUserController::class, 'update'])->middleware('auth');

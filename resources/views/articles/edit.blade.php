@@ -48,7 +48,7 @@
                     </div>
 
                     <!-- Author Information -->
-                    <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-xs">
+                    {{-- <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-xs">
                         <h2 class="text-base font-semibold text-slate-900 mb-4">Author Information</h2>
                         
                         <div class="space-y-4">
@@ -62,25 +62,10 @@
                                     </label>
                                     <p class="text-xs text-slate-400 mt-0.5">Square JPG/PNG</p>
                                 </div>
-
                                 <x-forms.error name="authors_image" />
                             </div>
-
-                            <div>
-                                <label for="authors_name" class="block text-sm font-medium text-slate-700 mb-1.5">Author Name</label>
-                                <input type="text" name="authors_name" value="{{ $article->authors_name }}" required class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-xs focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 focus:outline-hidden transition-all">
-                            
-                                <x-forms.error name="authors_name" />
-                            </div>
-
-                            <div>
-                                <label for="authors_profession" class="block text-sm font-medium text-slate-700 mb-1.5">Author Profession</label>
-                                <input type="text" name="authors_profession" value="{{ $article->authors_profession }}" required class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-xs focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 focus:outline-hidden transition-all">
-                            
-                                <x-forms.error name="authors_profession" />
-                            </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <!-- Title & Category Inputs -->
                     <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-xs">

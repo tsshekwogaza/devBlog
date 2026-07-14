@@ -20,9 +20,6 @@ return new class extends Migration
             $table->text('title');
             $table->text('text');
             $table->foreignId('category_id')->constrained();
-            $table->string('authors_image');
-            $table->string('authors_name');
-            $table->string('authors_profession');
             $table->timestamps();
         });
     }

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Article extends Model
 {
-    protected $fillable = ['id', 'user_id', 'image','title','text','category_id','authors_image','authors_name','authors_profession', 'created_at', 'updated_at'];
+    protected $fillable = ['id', 'user_id', 'image','title','text','category_id','created_at','updated_at'];
 
     // Define relationships (Tell laravel that an Article belongs to a Category and a User)
     public function category(): BelongsTo

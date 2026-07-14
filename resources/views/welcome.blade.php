@@ -12,9 +12,7 @@
         </div>
       </div>
       <div class="info">
-        <h3>
-          I first discoverd this blog in 2022, learned current skills, Started a business. 
-          I honestly feel its fuel for both Mind and Hustle.
+        <h3>I first discoverd this blog in 2025, learned current skills, Started a business. I honestly feel its fuel for both Mind and Hustle.
         </h3>
         <p>
           “ Whenever I hit a creative wall or feel burnt out, I turn to this blog. It’s filled with grounded 
@@ -30,15 +28,11 @@
         <img src="./images/image-jonathan.jpg" alt="jonathan">
         <div class="name">
           <h1>James Oluwaseyi</h1>
-          {{-- <h1>Jonathan Walters</h1> --}}
           <span class="status">Life Coach & Speaker</span>
-          {{-- <span class="status">Verified Graduate</span> --}}
         </div>
       </div>
       <div class="info">
-        <h3>
-          Moneycaucus is a Goldmine for Aspiring Entrepreneurs
-        </h3>
+        <h3>Dev.blog is a Goldmine for Aspiring Founders</h3>
         <p>“ Late back in 2020 when I launched my startup, I was overwhelmed and constantly second-guessing myself. 
           This blog became my go-to resource. From productivity hacks to mindset shifts, 
           the content helped me stay grounded and focused. It’s like having a mentor in your inbox. ”
@@ -51,17 +45,13 @@
         <img src="./images/image-jeanette.jpg" alt="jeanette">
         <div class="name">
           <h1>Sarah Kim</h1>
-          {{-- <h1>Jeanette Harmon</h1> --}}
           <span class="status">Business Consultant & Author</span>
         </div>
       </div>
       <div class="info">
-        <h3>
-          Business Strategy Meets Heart
-          {{-- An overall wonderful and rewarding experience --}}
-        </h3>
+        <h3>An overall wonderful and rewarding experience</h3>
         <p>
-          “ I love how this blog marries the hard skills of entrepreneurship with emotional intelligence and 
+          “ I love how this blog marries the hard skills of engineering with emotional intelligence and 
             self-mastery. So many business blogs feel cold or transactional, this one feels human. 
             It’s helped me not just grow my business, but evolve as a leader. ”
         </p>
@@ -77,15 +67,11 @@
         </div>
       </div>
       <div class="info">
-        <h3>
-          Real Talk for Real Growth. Getting guidance from real business people, and 
-          learning from their experiences was easy. 
-        </h3>
+        <h3>Real Talk for Real Growth. Getting guidance from real business people, and learning from their experiences was easy.</h3>
         <p>
-          “ 
-          This blog doesn’t sugarcoat the entrepreneurial journey, and that’s what makes it so powerful. It gives 
+          “ This blog doesn’t sugarcoat the journey, and that makes it so powerful. It gives 
           you the wins, the struggles, and everything in between. It’s honest, uplifting, and exactly what new and 
-          seasoned entrepreneurs need to keep evolving. I am saying it again, Real business people! ”
+          seasoned developers need to keep evolving. I am saying it again, Real Engineers! ”
         </p>
       </div>
     </div>

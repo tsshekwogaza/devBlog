@@ -19,8 +19,8 @@
 			<div class="mx-auto  flex items-center justify-center">
 				<img src="{{ asset('images/blog.png') }}" class="w-20 h-10">
 			</div>
-			<h2 id="form-title" class="mt-2 text-center text-3xl font-bold tracking-tight text-slate-900">Sign in your account</h2>
-			<p id="form-subtitle" class="mt-2 text-center text-sm text-slate-600">
+			<h2 id="form-title" class="mt-1 text-center text-3xl font-bold tracking-tight text-slate-900">Sign in your account</h2>
+			<p id="form-subtitle" class="mt-1 text-center text-sm text-slate-600">
 				Or 
 				<button onclick="toggleForms()" id="toggle-link" class="font-medium text-[#45b7be] hover:text-[#45a7be] focus:outline-hidden focus:underline cursor-pointer">create a new account</button>
 			</p>
@@ -58,22 +58,26 @@
 						<input id="signup-name" name="name" type="text" autocomplete="name" placeholder="Full Name" required class="block w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-slate-900 placeholder-slate-400 focus:border-[#45b7be] focus:ring-2 focus:ring-indigo-200/50 focus:outline-hidden text-sm sm:leading-6 transition-all">
 						<x-forms.error name="name" />
 					</div>
+
 					<div>
 						<input id="signup-email" name="email" type="email" autocomplete="email" placeholder="Email address" required class="block w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-slate-900 placeholder-slate-400 focus:border-[#45b7be] focus:ring-2 focus:ring-indigo-200/50 focus:outline-hidden text-sm sm:leading-6 transition-all">
 						<x-forms.error name="email" />
 					</div>
+
 					<div>
 						<input id="signup-password" name="password" type="password" placeholder="Password" required class="block w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-slate-900 placeholder-slate-400 focus:border-[#45b7be] focus:ring-2 focus:ring-indigo-200/50 focus:outline-hidden text-sm sm:leading-6 transition-all">
 						<x-forms.error name="password" />
 					</div>
+
 					<div class="flex items-center">
 						<input id="terms" name="terms" type="checkbox" required class="h-4 w-4 rounded border-slate-300 text-[#45b7be] focus:ring-[#45b7be]">
 						<label for="terms" class="ml-2 block text-sm text-slate-700">I agree to the <a href="" class="text-[#45b7be] hover:text-[#45b7be]">Terms</a> and <a href="" class="text-[#45b7be] hover:text-[#45b7be]">Privacy Policy</a></label>
 					</div>
+
 					<div>
 						<button type="submit" class="flex w-full justify-center rounded-lg bg-[#45b7be] px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-[#45a7be] focus-visible:outline-offset-2 focus-visible:outline-[#45b7be] transition-all cursor-pointer">Create account</button>
 					</div>
-				</form>
+				</enctype=>
 
 				<!-- Social Logins -->
 				{{-- <div class="mt-6">

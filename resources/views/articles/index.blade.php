@@ -106,26 +106,29 @@
             <section class="mt-12 mb-1 rounded-2xl border border-neutral-200 bg-white p-5 shadow-xs">
                 <h2 class="text-xs font-bold text-neutral-400 uppercase tracking-wider">Explore Topics</h2>
                 <div class="mt-3 flex flex-wrap gap-2">
-                    <!-- Active Category State -->
-                    <a href="articles" class="inline-flex items-center gap-1.5 rounded-full bg-[#45b7be] px-3.5 py-1.5 text-xs font-semibold text-white shadow-xs hover:bg-[#45a7be] transition-colors">All categories
-                        <span class="inline-flex h-2 w-2 rounded-full bg-indigo-200"></span>
-                    </a>
-                    <!-- Inactive Category States -->
-                    @foreach($categories as $category)
-                        <a href="?category_id={{ $category->id }}" class="rounded-full border border-neutral-200 bg-neutral-50 px-3.5 py-1.5 text-xs font-medium text-neutral-600 hover:border-neutral-300 hover:bg-white hover:text-neutral-900 transition-all">
-                            {{ $category->name }}
-                        </a>
+                    <!-- Active "All categories" State -->
+                    <a href="articles" class="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-semibold shadow-xs transition-colors {{ !request()->has('category_id') ? 'bg-[#45b7be] text-white hover:bg-[#45a7be]' : 'border border-neutral-200 bg-neutral-50 text-neutral-600 hover:bg-white hover:text-neutral-900' }}">
+                        All
+                        <span class="inline-flex h-2 w-2 rounded-full bg-indigo-200"></span> 
+                    </a> 
+
+                    <!-- Dynamic Categories Loop -->
+                    @foreach($categories as $category) 
+                        @php
+                            $isActive = request('category_id') == $category->id;
+                        @endphp
+                        <a href="?category_id={{ $category->id }}" class="rounded-full px-3.5 py-1.5 text-xs font-medium transition-all {{ $isActive ? 'bg-[#45b7be] text-white hover:bg-[#45a7be]' : 'border border-neutral-200 bg-neutral-50 text-neutral-600 hover:border-neutral-300 hover:bg-white hover:text-neutral-900' }}"> 
+                            {{ $category->name }} 
+                        </a> 
                     @endforeach
                 </div>
             </section>
 
             <!-- Section: Standard Grid Posts Layout -->
             <section class="mt-12">
-                <h3 class="text-2xl font-bold tracking-tight text-neutral-950">Latest Publications</h3>
-                
+                <h3 class="text-2xl font-bold tracking-tight text-neutral-950">Publications</h3>
                 <!-- Three-Column Responsive Grid Structure -->
                 <div class="mt-10 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-                    
                     <!-- Post Card -->
                     @foreach ($articles as $article)
                         <article class="group flex flex-col items-start justify-between">
@@ -148,7 +151,7 @@
                                             {{ $article->title }}
                                         </a>
                                     </h4>
-                                    <p class="mt-2 line-clamp-3 text-sm text-neutral-600 leading-relaxed">{{ $article->text }}</p>
+                                    <p class="mt-2 line-clamp-2 text-sm text-neutral-600 leading-relaxed">{{ $article->text }}</p>
                                 </div>
                             </div>
                         </article>
