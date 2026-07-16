@@ -78,7 +78,7 @@
         <footer class="flex flex-col mt-auto border-t border-neutral-200 bg-white py-8">
             <div class="flex items-center gap-7 mx-auto max-w-7xl px-4 text-center text-xs text-neutral-500 sm:px-6 lg:px-8">
                 <span class="font-bold">&copy; {{ date('Y') }}</span>
-                <span>Built with ❤ by devs for devs</span>
+                <span>Built with ❤️ by tsshekwogaza</span>
             </div>
         </footer>
     </body>
