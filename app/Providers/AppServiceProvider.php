@@ -8,6 +8,9 @@ use Illuminate\Auth\Access\Response;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 
+use Illuminate\Support\Facades\URL;
+
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -38,5 +41,9 @@ class AppServiceProvider extends ServiceProvider
 
             return Response::deny();
         });
+
+        if ($this->app->environment('production') || config('app.env') === 'production') {
+            URL::forceScheme('https');
+        }
     }
 }
