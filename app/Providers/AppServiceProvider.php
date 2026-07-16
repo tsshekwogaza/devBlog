@@ -8,6 +8,8 @@ use Illuminate\Auth\Access\Response;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 
+use Illuminate\Support\Facades\URL;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -38,5 +40,10 @@ class AppServiceProvider extends ServiceProvider
 
             return Response::deny();
         });
+
+        // This forces every asset, link, and favicon route to use https://
+        if (config('app.env') === 'production' || env('APP_ENV') === 'production') {
+            URL::forceScheme('https');
+        }
     }
 }
