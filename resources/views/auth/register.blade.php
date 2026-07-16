@@ -42,7 +42,7 @@
 					</div>
 					<div class="flex items-center justify-between">
 						<div class="text-sm">
-							<a href="#" class="font-medium text-[#45b7be] hover:text-[#45a7be]">Forgot password?</a>
+							<a href="/" class="font-medium text-[#45b7be] hover:text-[#45a7be]">Forgot password?</a>
 						</div>
 					</div>
 					<div>
@@ -71,7 +71,7 @@
 
 					<div class="flex items-center">
 						<input id="terms" name="terms" type="checkbox" required class="h-4 w-4 rounded border-slate-300 text-[#45b7be] focus:ring-[#45b7be]">
-						<label for="terms" class="ml-2 block text-sm text-slate-700">I agree to the <a href="" class="text-[#45b7be] hover:text-[#45b7be]">Terms</a> and <a href="" class="text-[#45b7be] hover:text-[#45b7be]">Privacy Policy</a></label>
+						<label for="terms" class="ml-2 block text-sm text-slate-700">I agree to the <a href="/" class="text-[#45b7be] hover:text-[#45b7be]">Terms</a> and <a href="/" class="text-[#45b7be] hover:text-[#45b7be]">Privacy Policy</a></label>
 					</div>
 
 					<div>

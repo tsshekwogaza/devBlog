@@ -108,10 +108,10 @@
 				<p class="mt-3 text-sm sm:text-base text-neutral-400 leading-relaxed">We are always hunting for technical talents to construct deep core execution walkthroughs. We pay premium industry rates for verified architectural documentation content.</p>
 				</div>
 				<div class="mt-8 flex flex-wrap gap-4 lg:mt-0 lg:shrink-0">
-				<a href="#" class="rounded-lg bg-white px-4 py-2.5 text-sm font-semibold text-neutral-950 shadow-xs hover:bg-neutral-100 transition-colors">
+				<a href="/" class="rounded-lg bg-white px-4 py-2.5 text-sm font-semibold text-neutral-950 shadow-xs hover:bg-neutral-100 transition-colors">
 					Read writer guidelines
 				</a>
-				<a href="#" class="rounded-lg border border-neutral-700 bg-neutral-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-neutral-800 hover:border-neutral-600 transition-all">
+				<a href="/" class="rounded-lg border border-neutral-700 bg-neutral-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-neutral-800 hover:border-neutral-600 transition-all">
 					Contact our team
 				</a>
 				</div>
