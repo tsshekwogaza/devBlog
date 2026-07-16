@@ -47,8 +47,9 @@
 
                                 <a href="{{ url('/users'.'/'.Auth::user()->id.'/profile') }}">
                                     <div class="flex items-center gap-2 rounded-lg border border-neutral-200 bg-neutral-50/50 px-3 py-1.5 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-50">
-                                        <img src="/storage/{{ Auth::user()->avatar }}" alt="Avatar" class="h-8 w-8 shrink-0 rounded-full object-cover bg-neutral-100">
+                                        {{-- <img src="/storage/{{ Auth::user()->avatar }}" alt="Avatar" class="h-8 w-8 shrink-0 rounded-full object-cover bg-neutral-100"> --}}
                                         {{-- <span class="max-w-2500 truncate">{{ Auth::user()->name }}</span> --}}
+                                    <img src="{{ Storage::url(Auth::user()->avatar) }}" alt="Avatar" class="h-8 w-8 shrink-0 rounded-full object-cover bg-neutral-100">
                                     </div>
                                 </a>
 
