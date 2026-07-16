@@ -42,7 +42,9 @@
 						</h1>
 
 						<div class="mt-6 flex items-center gap-3 border-y border-neutral-200/80 py-4">
-							<img src="/storage/{{ $article->user->avatar }}" alt="authors avatar" class="h-10 w-10 rounded-full bg-neutral-100 object-cover">
+							<img src="{{ Storage::url($article->user->avatar) }}" alt="authors avatar" class="h-10 w-10 rounded-full bg-neutral-100 object-cover">
+
+							{{-- <img src="/storage/{{ $article->user->avatar }}" alt="authors avatar" class="h-10 w-10 rounded-full bg-neutral-100 object-cover"> --}}
 							<div>
 								<p class="text-sm font-semibold text-neutral-950">Written by {{ $article->user->name }}</p>
 								<p class="text-xs text-neutral-500">{{ $article->user->profession }}</p>
@@ -51,7 +53,9 @@
 					</header>
 
 					<div class="mt-8 overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100 aspect-video">
-						<img src="/storage/{{ $article->image }}" alt="Hero banner markup representation" class="h-full w-full object-cover">
+						<img src="{{ Storage::url($article->image) }}" alt="Hero banner markup representation" class="h-full w-full object-cover">
+
+						{{-- <img src="/storage/{{ $article->image }}" alt="Hero banner markup representation" class="h-full w-full object-cover"> --}}
 					</div>
 
 					<!-- Editorial Typography/Body Area -->
@@ -95,8 +99,9 @@
 
 					<footer class="mt-16 rounded-2xl border border-neutral-200 bg-white p-6 sm:p-8">
 						<div class="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+              <img src="{{ Storage::url($article->user->avatar) }}" alt="Authors Avatar" class="h-14 w-14 shrink-0 rounded-full object-cover bg-neutral-100">
 							
-							<img src="/storage/{{ $article->user->avatar }}" alt="Sarah Jenkins" class="h-14 w-14 shrink-0 rounded-full object-cover bg-neutral-100">
+							{{-- <img src="/storage/{{ $article->user->avatar }}" alt="Sarah Jenkins" class="h-14 w-14 shrink-0 rounded-full object-cover bg-neutral-100"> --}}
 							
 							<div class="space-y-2">
 								<h3 class="text-base font-bold text-neutral-950">About {{ $article->user->name }}</h3>

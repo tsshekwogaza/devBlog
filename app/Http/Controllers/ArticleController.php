@@ -50,7 +50,8 @@ class ArticleController extends Controller
             'category_id' => 'required|exists:categories,id',
         ]);
 
-        $imagePath = $request->file('image')->store('images', 'public');
+        $imagePath = $request->file('image')->store('images');
+        // $imagePath = $request->file('image')->store('images', 'public');
 
         Article::create([
             'user_id' => Auth::id(),
@@ -62,7 +63,7 @@ class ArticleController extends Controller
 
         return redirect('articles');
     }
-
+    
     /**
      * Display the specified resource.
      */
@@ -106,10 +107,18 @@ class ArticleController extends Controller
         Gate::authorize('update', $article);
 
         if ($request->hasFile('image')) {
-            Storage::disk('public')->delete($article->image);
+            if ($article->image) {
+                Storage::delete($article->image);
+            }
 
-            $article->image = $request->file('image')->store('images', 'public');
+            $article->image = $request->file('image')->store('images');
         }
+
+        // if ($request->hasFile('image')) {
+        //     Storage::disk('public')->delete($article->image);
+
+        //     $article->image = $request->file('image')->store('images', 'public');
+        // }
 
         $article->title = $request->title;
         $article->text = $request->text;
@@ -127,9 +136,13 @@ class ArticleController extends Controller
     {
         $article = Article::findOrFail($id);
 
-        if ($article->image && Storage::disk('public')->exists($article->image)) {
-            Storage::disk('public')->delete($article->image);
+        if ($article->image && Storage::exists($article->image)) {
+            Storage::delete($article->image);
         }
+
+        // if ($article->image && Storage::disk('public')->exists($article->image)) {
+        //     Storage::disk('public')->delete($article->image);
+        // }
 
         $article->delete();
 

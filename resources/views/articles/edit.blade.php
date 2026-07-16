@@ -30,7 +30,9 @@
                         
                         <div class="group relative flex flex-col items-center justify-center rounded-lg border-2 border-dashed border-slate-300 p-6 text-center hover:border-slate-400 transition-colors bg-slate-50/50">
                             <div class="relative mb-4 h-40 w-full overflow-hidden rounded-md bg-slate-100 border border-slate-200">
-                                <img src="/storage/{{ $article->image }}" alt="Current image" class="h-full w-full object-cover">
+                                <img src="{{ Storage::url($article->image) }}" alt="Current image" class="h-full w-full object-cover">
+
+                                {{-- <img src="/storage/{{ $article->image }}" alt="Current image" class="h-full w-full object-cover"> --}}
                                 <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
                                     <span class="text-xs font-medium text-white rounded-sm">
                                         <input type="file" name="image" value="{{ $article->image }}" class="p-16">
@@ -46,26 +48,6 @@
 
                         <x-forms.error name="image" />
                     </div>
-
-                    <!-- Author Information -->
-                    {{-- <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-xs">
-                        <h2 class="text-base font-semibold text-slate-900 mb-4">Author Information</h2>
-                        
-                        <div class="space-y-4">
-                            <div class="flex items-center gap-4">
-                                <div class="relative h-12 w-12 overflow-hidden rounded-full border border-slate-200 bg-slate-100">
-                                    <img src="/storage/{{ $article->authors_image }}" alt="Author avatar" class="h-full w-full object-cover">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-semibold text-indigo-600 hover:text-indigo-500 cursor-pointer">
-                                        <input id="authors_image" name="authors_image" type="file">
-                                    </label>
-                                    <p class="text-xs text-slate-400 mt-0.5">Square JPG/PNG</p>
-                                </div>
-                                <x-forms.error name="authors_image" />
-                            </div>
-                        </div>
-                    </div> --}}
 
                     <!-- Title & Category Inputs -->
                     <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-xs">

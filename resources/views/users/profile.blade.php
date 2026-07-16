@@ -30,7 +30,9 @@
                         <div class="space-y-4">
                             <div class="flex items-center gap-4">
                                 <div class="relative h-12 w-12 overflow-hidden rounded-full border border-slate-200 bg-slate-100">
-                                    <img src="/storage/{{ Auth::user()->avatar }}" alt="Author avatar" class="h-full w-full object-cover">
+                                    <img src="{{ Storage::url(Auth::user()->avatar) }}" alt="Author avatar" class="h-full w-full object-cover">
+
+                                    {{-- <img src="/storage/{{ Auth::user()->avatar }}" alt="Author avatar" class="h-full w-full object-cover"> --}}
                                 </div>
                                 <div>
                                     <label class="block text-xs font-semibold text-indigo-600 hover:text-indigo-500 cursor-pointer">

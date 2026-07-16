@@ -134,7 +134,9 @@
                         <article class="group flex flex-col items-start justify-between">
                             <div class="relative w-full overflow-hidden rounded-2xl border border-neutral-200/60 bg-neutral-100 aspect-16/10">
                                 <a href="{{ url('articles/' . $article->id) }}">
-                                    <img src="/storage/{{ $article->image }}" alt="Post thumbnail" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]">
+                                    <img src="{{ Storage::url($article->image) }}" alt="Post thumbnail" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]">
+
+                                    {{-- <img src="/storage/{{ $article->image }}" alt="Post thumbnail" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"> --}}
                                 </a>
                             </div>
                             <div class="max-w-xl">

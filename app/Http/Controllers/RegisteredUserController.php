@@ -74,10 +74,17 @@ class RegisteredUserController extends Controller
 
         if ($request->hasFile('avatar')) {
             if ($user->avatar && $user->avatar !== 'images/avatar.png') {
-                Storage::disk('public')->delete($user->avatar);
+                Storage::delete($user->avatar);
             }
-            $user->avatar = $request->file('avatar')->store('images', 'public');
+            $user->avatar = $request->file('avatar')->store('images');
         }
+
+        // if ($request->hasFile('avatar')) {
+        //     if ($user->avatar && $user->avatar !== 'images/avatar.png') {
+        //         Storage::disk('public')->delete($user->avatar);
+        //     }
+        //     $user->avatar = $request->file('avatar')->store('images', 'public');
+        // }
 
         $user->update([
             'name' => $request->name,
