@@ -76,7 +76,7 @@
             {{-- <div class="group relative grid grid-cols-1 overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-xs transition-all duration-300 hover:border-neutral-300 hover:shadow-md lg:grid-cols-12">
                 <!-- Image Wrapper with v4 aspect utility -->
                 <div class="aspect-video w-full bg-neutral-100 lg:col-span-7 lg:aspect-auto lg:h-full">
-                    <img src="{{ asset('images/image-kira') }}" alt="Featured article illustration" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]">
+                    <img src="{{ asset('images/blog.png') }}" alt="Featured article illustration" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]">
                 </div>
                 <!-- Text Box -->
                 <div class="flex flex-col justify-center p-8 sm:p-10 lg:col-span-5 lg:p-12">
@@ -93,9 +93,9 @@
                     </h2>
                     <p class="mt-4 line-clamp-3 text-base text-neutral-600 leading-relaxed">Tailwind v4 fundamentally changes package dependencies, moving heavy configurations to native CSS. Learn how to map your configuration to pure CSS variables without performance regression.</p>
                     <div class="mt-6 flex items-center gap-3">
-                        <img src="{{ asset('images/image-kira.jpg') }}" alt="Author avatar" class="h-10 w-10 rounded-full bg-neutral-100 object-cover">
+                        <img src="{{ asset('images/image-jonathan.jpg') }}" alt="Author avatar" class="h-10 w-10 rounded-full bg-neutral-100 object-cover">
                         <div>
-                            <p class="text-sm font-semibold text-neutral-950">Sarah Jenkins</p>
+                            <p class="text-sm font-semibold text-neutral-950">Admin Jonathan</p>
                             <p class="text-xs text-neutral-500">Principal Architect</p>
                         </div>
                     </div>
@@ -107,7 +107,7 @@
                 <h2 class="text-xs font-bold text-neutral-400 uppercase tracking-wider">Explore Topics</h2>
                 <div class="mt-3 flex flex-wrap gap-2">
                     <!-- Active "All categories" State -->
-                    <a href="articles" class="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-semibold shadow-xs transition-colors {{ !request()->has('category_id') ? 'bg-[#45b7be] text-white hover:bg-[#45a7be]' : 'border border-neutral-200 bg-neutral-50 text-neutral-600 hover:bg-white hover:text-neutral-900' }}">
+                    <a href="articles" class="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-semibold shadow-xs transition-colors {{ !request()->has('category_id') ? 'bg-[#45b7be] text-white hover:bg-primary' : 'border border-neutral-200 bg-neutral-50 text-neutral-600 hover:bg-white hover:text-neutral-900' }}">
                         All
                         <span class="inline-flex h-2 w-2 rounded-full bg-indigo-200"></span> 
                     </a> 
@@ -117,7 +117,7 @@
                         @php
                             $isActive = request('category_id') == $category->id;
                         @endphp
-                        <a href="?category_id={{ $category->id }}" class="rounded-full px-3.5 py-1.5 text-xs font-medium transition-all {{ $isActive ? 'bg-[#45b7be] text-white hover:bg-[#45a7be]' : 'border border-neutral-200 bg-neutral-50 text-neutral-600 hover:border-neutral-300 hover:bg-white hover:text-neutral-900' }}"> 
+                        <a href="?category_id={{ $category->id }}" class="rounded-full px-3.5 py-1.5 text-xs font-medium transition-all {{ $isActive ? 'bg-[#45b7be] text-white hover:bg-primary' : 'border border-neutral-200 bg-neutral-50 text-neutral-600 hover:border-neutral-300 hover:bg-white hover:text-neutral-900' }}"> 
                             {{ $category->name }} 
                         </a> 
                     @endforeach
@@ -172,7 +172,7 @@
                     <p class="mt-3 text-base text-slate-400">Get curated front-end architecture articles, UI/UX breakdowns, and modern web tips delivered straight to your inbox weekly.</p>
                     <form class="mt-8 flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                         <input type="email" placeholder="Enter your email address" required class="w-full min-w-0 flex-auto rounded-lg border-0 bg-white/10 px-4 py-2.5 text-white placeholder-slate-500 shadow-xs ring-1 ring-white/10 focus:ring-2 focus:ring-[#45b7be] focus:outline-hidden text-sm">
-                        <button type="submit" class="flex-none rounded-lg bg-[#45b7be] px-4 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-[#45a7be] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#45b7be]">Subscribe</button>
+                        <button type="submit" class="flex-none rounded-lg bg-[#45b7be] px-4 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#45b7be]">Subscribe</button>
                     </form>
                 </div>
             </section>

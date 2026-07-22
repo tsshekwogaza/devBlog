@@ -38,7 +38,7 @@
                             <span class="h-5 w-px bg-neutral-200" aria-hidden="true"></span>
 
                             <div class="flex items-center gap-4">
-                                <a href="{{ url('/articles/create') }}" class="inline-flex items-center gap-1.5 rounded-lg bg-[#45b7be] px-3.5 py-2 text-sm font-semibold text-white shadow-xs transition-all hover:bg-[#3ba3a9] hover:shadow-sm  focus-visible:outline-offset-2 focus-visible:outline-[#45b7be]">
+                                <a href="{{ url('/articles/create') }}" class="inline-flex items-center gap-1.5 rounded-lg bg-[#45b7be] px-3.5 py-2 text-sm font-semibold text-white shadow-xs transition-all hover:bg-primary hover:shadow-sm  focus-visible:outline-offset-2 focus-visible:outline-[#45b7be]">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                                     </svg>

@@ -137,7 +137,7 @@
                             Cancel
                         </button>
 
-                        <button type="submit" class="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg shadow-2xs hover:bg-indigo-500 active:bg-indigo-700 transition cursor-pointer">
+                        <button type="submit" class="px-4 py-2 text-sm font-medium text-white bg-[#3ba3a9] rounded-lg shadow-2xs hover:bg-primary active:bg-primary transition cursor-pointer">
                             Save Changes
                         </button>
                     </div>

@@ -53,13 +53,15 @@ class ArticleController extends Controller
         $imagePath = $request->file('image')->store('images');
         // $imagePath = $request->file('image')->store('images', 'public');
 
-        Article::create([
+        $article = Article::create([
             'user_id' => Auth::id(),
             'image' => $imagePath,
             'title' => $request->title,
             'text' => $request->text,
             'category_id' => $request->category_id,
         ]);
+
+        // notify the user
 
         return redirect('articles');
     }

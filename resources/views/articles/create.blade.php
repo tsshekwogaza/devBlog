@@ -1,5 +1,4 @@
 <x-layout title="Create Article">
-
     <main class="flex-1 max-w-3xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10">        
         <div class="mb-8">
             <h1 class="text-3xl font-bold tracking-tight text-slate-900">Create New Article</h1>
@@ -11,13 +10,23 @@
             <!-- Cover Image Upload Area -->
             <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs">
                 <label class="block text-sm font-medium text-slate-700 mb-2">Article image</label>
-                <div class="border-2 border-dashed border-slate-200 rounded-lg p-8 flex flex-col items-center justify-center bg-slate-50/50 hover:bg-slate-50 transition cursor-pointer group">
-                    <svg class="w-8 h-8 text-slate-400 group-hover:text-indigo-500 transition mb-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.183 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.183 0L21.75 16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
-                    </svg>
-                    <p class="text-sm font-medium text-slate-700">Click to upload or drag and drop</p>
-                    <input type="file" name="image" required class="w-full rounded-lg border border-gray-300 p-3">
-                    <p class="text-xs text-slate-400 mt-1">PNG, JPG, or WEBP up to 2MB</p>
+                
+                <div onclick="document.getElementById('image-input').click()" 
+                    class="relative border-2 border-dashed border-slate-200 rounded-lg min-h-50 flex flex-col items-center justify-center bg-slate-50/50 hover:bg-slate-50 transition cursor-pointer group overflow-hidden">
+                    
+                    <div id="preview-container" class="absolute inset-0 hidden w-full h-full z-10 bg-white">
+                        <img id="image-preview" src="#" alt="Banner preview" class="w-full h-full object-cover">                    
+                    </div>
+
+                    <div id="upload-ui" class="flex flex-col items-center justify-center p-8 text-center">
+                        <svg class="w-8 h-8 text-slate-400 group-hover:text-indigo-500 transition mb-3" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.183 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.183 0L21.75 16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
+                        </svg>
+                        <p class="text-sm font-medium text-slate-700">Click to upload or drag and drop</p>
+                        <p class="text-xs text-slate-400 mt-1">PNG, JPG, or WEBP up to 2MB</p>
+                    </div>
+
+                    <input type="file" name="image" id="image-input" required class="absolute inset-0 opacity-0 cursor-pointer z-20">
                 </div>
 
                 <x-forms.error name="image" />
@@ -86,14 +95,13 @@
                 <button type="button" class="px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg shadow-2xs hover:bg-slate-50 active:bg-slate-100 transition cursor-pointer">
                     Save draft
                 </button>
-                <button type="submit" class="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg shadow-2xs hover:bg-indigo-500 active:bg-indigo-700 transition cursor-pointer">
+                <button type="submit" class="px-4 py-2 text-sm font-medium text-white bg-[#3ba3a9] rounded-lg shadow-2xs hover:bg-primary active:bg-primary transition cursor-pointer">
                     Publish
                 </button>
             </div>
         </form>
     </main>
 
-    {{-- <script src="/tinymce/tinymce.min.js"></script> --}}
+    {{-- <script src="/tinymce/tinymce.min.js"></scrip> --}}
     {{-- <script src="/tinymce/init-tinymce.min.js"></script> --}}
-
 </x-layout>
